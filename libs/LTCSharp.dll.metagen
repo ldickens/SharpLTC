@@ -1,0 +1,106 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly LTCSharp, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class LTCSharp.Timecode: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, Int32, Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IFormattable
+    System.IDisposable
+  Properties:
+    Int32 Frame 'get ' : 
+    Int32 Seconds 'get ' : 
+    Int32 Minutes 'get ' : 
+    Int32 Hours 'get ' : 
+    Int32 Days 'get ' : 
+    Int32 Months 'get ' : 
+    Int32 Years 'get ' : 
+    System.String TimeZone 'get ' : 
+  Methods:
+    getInstance(): PrivateScope, Public, HideBySig
+    get_TimeZone(): PrivateScope, Public, HideBySig, SpecialName
+    get_Years(): PrivateScope, Public, HideBySig, SpecialName
+    get_Months(): PrivateScope, Public, HideBySig, SpecialName
+    get_Days(): PrivateScope, Public, HideBySig, SpecialName
+    get_Hours(): PrivateScope, Public, HideBySig, SpecialName
+    get_Minutes(): PrivateScope, Public, HideBySig, SpecialName
+    get_Seconds(): PrivateScope, Public, HideBySig, SpecialName
+    get_Frame(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(String, IFormatProvider): PrivateScope, Public, Virtual, HideBySig
+    ToString(String): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class LTCSharp.Frame: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    getTimecode(): PrivateScope, Public, HideBySig
+    getInstance(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class LTCSharp.Utils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    toNative(BGFlags): PrivateScope, Public, Static, HideBySig
+    toNative(TVStandard): PrivateScope, Public, Static, HideBySig
+Class LTCSharp.Decoder: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Write(Single[], Int32, Int32): PrivateScope, Public, HideBySig
+    Write(UInt16[], Int32, Int32): PrivateScope, Public, HideBySig
+    Write(Int16[], Int32, Int32): PrivateScope, Public, HideBySig
+    Write(Byte[], Int32, Int32): PrivateScope, Public, HideBySig
+    Write(IntPtr, TypeCode, Int32, Int32): PrivateScope, Public, HideBySig
+    WriteAsU16(Byte[], Int32, Int32): PrivateScope, Public, HideBySig
+    WriteAsS16(Byte[], Int32, Int32): PrivateScope, Public, HideBySig
+    WriteAsFloat(Byte[], Int32, Int32): PrivateScope, Public, HideBySig
+    FlushQueue(): PrivateScope, Public, HideBySig
+    GetQueueLength(): PrivateScope, Public, HideBySig
+    Read(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class LTCSharp.Encoder: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Double, Double, LTCSharp.TVStandard, LTCSharp.BGFlags): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    setTimecode(Timecode): PrivateScope, Public, HideBySig
+    getTimecode(): PrivateScope, Public, HideBySig
+    setFrame(Frame): PrivateScope, Public, HideBySig
+    getFrame(): PrivateScope, Public, HideBySig
+    incrementFrame(): PrivateScope, Public, HideBySig
+    decrementFrame(): PrivateScope, Public, HideBySig
+    getBuffer(Byte[], Int32): PrivateScope, Public, HideBySig
+    getBufferPointer(): PrivateScope, Public, HideBySig
+    flushBuffer(): PrivateScope, Public, HideBySig
+    setBufferSize(Double, Double): PrivateScope, Public, HideBySig
+    setVolume(Double): PrivateScope, Public, HideBySig
+    encodeFrame(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Struct LTCSharp.TVStandard: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    LTCSharp.TVStandard TV525_60i = 0 : Public, Static, Literal, HasDefault
+    LTCSharp.TVStandard TV625_50i = 1 : Public, Static, Literal, HasDefault
+    LTCSharp.TVStandard TV1125_60i = 2 : Public, Static, Literal, HasDefault
+    LTCSharp.TVStandard FILM24p = 3 : Public, Static, Literal, HasDefault
+Struct LTCSharp.BGFlags: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    LTCSharp.BGFlags NONE = 0 : Public, Static, Literal, HasDefault
+    LTCSharp.BGFlags USE_DATE = 1 : Public, Static, Literal, HasDefault
+    LTCSharp.BGFlags TC_CLOCK = 2 : Public, Static, Literal, HasDefault
+    LTCSharp.BGFlags BGF_DONT_TOUCH = 3 : Public, Static, Literal, HasDefault
+    LTCSharp.BGFlags NO_PARITY = 4 : Public, Static, Literal, HasDefault

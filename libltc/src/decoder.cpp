@@ -23,6 +23,12 @@
    If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+#include "decoder.h"
 #ifdef _MSC_VER
 	#include <limits>
 	#define INFINITY std::numeric_limits<double>::max();
@@ -85,12 +91,6 @@
  * B16(10101010,01010101) = 43605
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-
-#include "decoder.h"
 
 #define DEBUG_DUMP(msg, f) \
 { \
