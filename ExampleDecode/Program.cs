@@ -26,13 +26,13 @@ namespace ExampleDecode
 		{
 			lock (FDecoder)
 			{
-				byte[] downSampled = new byte[e.BytesRecorded / 2];
-				for (int i = 0; i < e.BytesRecorded / 2; i++)
-				{
-					downSampled[i] = (byte)(((int)e.Buffer[i * 2] + (int)e.Buffer[i * 2 + 1]) / 2);
-				}
+				//byte[] downSampled = new byte[e.BytesRecorded / 2];
+				//for (int i = 0; i < e.BytesRecorded / 2; i++)
+				//{
+				//	downSampled[i] = (byte)(((int)e.Buffer[i * 2] + (int)e.Buffer[i * 2 + 1]) / 2);
+				//}
 
-				FDecoder.Write(downSampled, e.BytesRecorded / 2, 0);
+				FDecoder.Write(e.Buffer, e.BytesRecorded, 0);
 			}
 		}
 
